@@ -1,0 +1,40 @@
+# ====== Java / Maven ======
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.log
+!.mvn/wrapper/maven-wrapper.jar
+
+# ====== Node / Vue ======
+mify-web/node_modules/
+mify-web/dist/
+mify-web/.env.local
+mify-web/.env.*.local
+
+# ====== IDE ======
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+*.swp
+*.swo
+*~
+
+# VS Code (keep workspace settings)
+.vscode/settings.json
+
+# ====== OS ======
+Thumbs.db
+.DS_Store
+
+# ====== Docker ======
+deploy/**/data/
+deploy/**/logs/
+
+# ====== Misc ======
+*.tmp
+*.bak
+logs/
