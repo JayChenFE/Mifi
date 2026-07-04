@@ -305,14 +305,13 @@ POST   /api/v1/providers/{id}/test-connection  # 非 CRUD 操作用动词
 所有代码修改通过 feature 分支进行，不直接在 master 上提交：
 
 1. 从 `master` 切出分支：`feature/<描述>` 或 `fix/<描述>`
-2. 在分支上开发并提交
-3. Push 前先 rebase：`git fetch origin && git rebase origin/master`
-4. Push 分支到远程，提交 Pull Request
-5. 代码 Review 通过后 merge 到 master
-6. Merge 完成后删除 feature 分支，继续下一任务
+2. 在分支上开发并提交（提交到本地，不 push）
+3. 等到用户明确要求 push 时，先 rebase master 再 push
+4. Push 后等代码 Review 通过，merge 到 master
+5. Merge 完成后继续下一任务
 
 ```
-master ← feature/xxx → 开发提交 → rebase master → push → Review → Merge → 下一任务
+master ← feature/xxx → 开发 → 本地提交 →（用户指令 push）→ rebase master → push → Review → Merge
 ```
 
 ### 提交信息格式
