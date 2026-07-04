@@ -298,7 +298,24 @@ POST   /api/v1/providers/{id}/test-connection  # 非 CRUD 操作用动词
 
 ---
 
-## Git 提交规范
+## Git 规范
+
+### 分支工作流
+
+所有代码修改通过 feature 分支进行，不直接在 master 上提交：
+
+1. 从 `master` 切出分支：`feature/<描述>` 或 `fix/<描述>`
+2. 在分支上开发并提交
+3. Push 前先 rebase：`git fetch origin && git rebase origin/master`
+4. Push 分支到远程，提交 Pull Request
+5. 代码 Review 通过后 merge 到 master
+6. Merge 完成后删除 feature 分支，继续下一任务
+
+```
+master ← feature/xxx → 开发提交 → rebase master → push → Review → Merge → 下一任务
+```
+
+### 提交信息格式
 
 遵循 [Conventional Commits](https://www.conventionalcommits.org/zh-hans/) 格式：
 
@@ -308,7 +325,7 @@ POST   /api/v1/providers/{id}/test-connection  # 非 CRUD 操作用动词
 <body>
 ```
 
-### type
+#### type
 
 | type     | 说明                   |
 | -------- | ---------------------- |
@@ -322,7 +339,7 @@ POST   /api/v1/providers/{id}/test-connection  # 非 CRUD 操作用动词
 | chore    | 构建/工具/依赖变更     |
 | ci       | CI/CD 配置变更         |
 
-### scope
+#### scope
 
 使用模块名，与目录名对应：
 
@@ -332,18 +349,18 @@ provider, agent, chat, mcp, workflow, knowledge, common, web, deploy
 
 跨模块改动可省略 scope 或用逗号分隔（如 `chat, agent`）。
 
-### subject
+#### subject
 
 - 中文描述，简明扼要（不超过 50 字）
 - 动词开头：新增、修复、重构、优化、移除、升级
 - 不以句号结尾
 
-### body（可选）
+#### body（可选）
 
 - 说明改动原因、方案要点、breaking changes
 - 关联 issue：`Closes #123` 或 `Refs #456`
 
-### 示例
+#### 示例
 
 ```
 feat(agent): 新增 Agent 绑定 MCP 工具接口

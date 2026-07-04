@@ -93,7 +93,7 @@ docker compose -f deploy/docker-compose.yml up -d
 
 ## 项目规范
 
-详见 [CLAUDE.md](CLAUDE.md)，涵盖架构设计、代码组织、数据库规范、接口规范、编码规范（基于阿里巴巴 Java 开发手册）、Git 提交规范。
+详见 [CLAUDE.md](CLAUDE.md)，涵盖架构设计、代码组织、数据库规范、接口规范、编码规范（基于阿里巴巴 Java 开发手册）、Git 规范。
 
 ## License
 
