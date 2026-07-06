@@ -55,14 +55,17 @@ mify/
 ### 本地开发
 
 ```bash
-# 1. 构建后端
+# 1. 创建数据库
+mysql -u root -p -e "CREATE DATABASE IF NOT EXISTS mify DEFAULT CHARACTER SET utf8mb4;"
+
+# 2. 构建并安装所有模块到本地仓库
 mvn clean install -DskipTests
 
-# 2. 启动后端
+# 3. 启动后端（端口 8080）
 cd mify-app
 mvn spring-boot:run
 
-# 3. 启动前端
+# 4. 启动前端（新终端）
 cd mify-web
 npm install
 npm run dev
