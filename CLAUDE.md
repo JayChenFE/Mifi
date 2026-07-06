@@ -302,16 +302,21 @@ POST   /api/v1/providers/{id}/test-connection  # 非 CRUD 操作用动词
 
 ### 分支工作流
 
-所有代码修改通过 feature 分支进行，不直接在 master 上提交：
+所有代码修改通过 feature 分支进行，不直接在 master 上提交。
+
+**默认流程**：建分支 → 开发 → 本地提交 → rebase master → push → Review → Merge
 
 1. 从 `master` 切出分支：`feature/<描述>` 或 `fix/<描述>`
-2. 在分支上开发并提交（提交到本地，不 push）
-3. 等到用户明确要求 push 时，先 rebase master 再 push
-4. Push 后等代码 Review 通过，merge 到 master
+2. 在分支上开发并本地提交
+3. 默认直接 rebase master 并 push
+4. 等代码 Review 通过，merge 到 master
 5. Merge 完成后继续下一任务
 
+**例外**：用户在指令末尾加「不push」或「本地提交」时，只本地提交，不 push。
+
 ```
-master ← feature/xxx → 开发 → 本地提交 →（用户指令 push）→ rebase master → push → Review → Merge
+master ← feature/xxx → 开发 → 本地提交 → rebase master → push（默认）→ Review → Merge
+                                         ↘ 不push（用户指定）
 ```
 
 ### 提交信息格式
