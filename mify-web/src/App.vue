@@ -81,12 +81,14 @@ body {
 
 /* Sidebar menu items */
 .app-sidebar .el-menu-item {
+  position: relative;
   margin: 2px 8px;
   border-radius: var(--radius-md);
   height: 40px;
   line-height: 40px;
   font-size: var(--font-size-base);
   transition: background-color var(--transition-fast);
+  overflow: visible;
 }
 
 .app-sidebar .el-menu-item .el-icon {
@@ -101,6 +103,19 @@ body {
 .app-sidebar .el-menu-item.is-active {
   background-color: var(--bg-sidebar-active) !important;
   color: var(--text-sidebar-active) !important;
+}
+
+/* 左侧选中指示条 */
+.app-sidebar .el-menu-item.is-active::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 20px;
+  border-radius: 0 3px 3px 0;
+  background: var(--color-brand);
 }
 
 /* ====== Main Content ====== */
