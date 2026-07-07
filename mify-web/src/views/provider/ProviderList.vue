@@ -39,6 +39,7 @@
       ref="dialogRef"
       :fields="formFields"
       :title="editingId ? '编辑提供商' : '新增提供商'"
+      width="480px"
       @submit="handleSubmit"
     />
   </div>
@@ -106,8 +107,8 @@ const formFields: FormField[] = [
       { label: 'Ollama', value: 'Ollama' },
     ],
   },
-  { prop: 'apiKey', label: 'API Key', placeholder: '请输入 API Key' },
-  { prop: 'baseUrl', label: 'Base URL', placeholder: '请输入 Base URL' },
+  { prop: 'apiKey', label: 'API Key', type: 'password', placeholder: '请输入 API Key' },
+  { prop: 'baseUrl', label: 'Base URL', placeholder: 'https://api.openai.com/v1' },
 ]
 
 function handleCreate() {

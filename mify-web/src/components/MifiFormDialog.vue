@@ -2,7 +2,7 @@
   <el-dialog
     v-model="visible"
     :title="title"
-    width="560px"
+    :width="width"
     :close-on-click-modal="false"
     @closed="handleClosed"
   >
@@ -22,6 +22,13 @@
         <el-input
           v-if="field.type === 'input' || !field.type"
           v-model="formData[field.prop]"
+          :placeholder="field.placeholder"
+        />
+        <el-input
+          v-else-if="field.type === 'password'"
+          v-model="formData[field.prop]"
+          type="password"
+          show-password
           :placeholder="field.placeholder"
         />
         <el-input-number
@@ -66,7 +73,7 @@ import type { FormInstance, FormItemRule } from 'element-plus'
 export interface FormField {
   prop: string
   label: string
-  type?: 'input' | 'number' | 'select' | 'switch'
+  type?: 'input' | 'number' | 'password' | 'select' | 'switch'
   placeholder?: string
   rules?: FormItemRule[]
   options?: { label: string; value: any }[]
@@ -75,10 +82,12 @@ export interface FormField {
 interface Props {
   fields: FormField[]
   title?: string
+  width?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
   title: '表单',
+  width: '560px',
 })
 
 const emit = defineEmits<{
