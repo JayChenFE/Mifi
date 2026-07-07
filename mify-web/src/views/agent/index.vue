@@ -1,6 +1,6 @@
 <template>
   <div class="page-container">
-    <h1>Agent</h1>
+    <h2>Agent 管理</h2>
   </div>
 </template>
 

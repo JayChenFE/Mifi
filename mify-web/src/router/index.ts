@@ -6,12 +6,12 @@ const routes: RouteRecordRaw[] = [
     redirect: '/chat',
   },
   {
-    path: '/provider',
+    path: '/providers',
     name: 'Provider',
     component: () => import('@/views/provider/index.vue'),
   },
   {
-    path: '/agent',
+    path: '/agents',
     name: 'Agent',
     component: () => import('@/views/agent/index.vue'),
   },
@@ -19,21 +19,6 @@ const routes: RouteRecordRaw[] = [
     path: '/chat',
     name: 'Chat',
     component: () => import('@/views/chat/index.vue'),
-  },
-  {
-    path: '/knowledge',
-    name: 'Knowledge',
-    component: () => import('@/views/knowledge/index.vue'),
-  },
-  {
-    path: '/workflow',
-    name: 'Workflow',
-    component: () => import('@/views/workflow/index.vue'),
-  },
-  {
-    path: '/mcp',
-    name: 'Mcp',
-    component: () => import('@/views/mcp/index.vue'),
   },
 ]
 
