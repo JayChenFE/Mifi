@@ -10,12 +10,15 @@
     >
       <div class="sidebar-title">Mify</div>
       <el-menu-item index="/chat">
+        <el-icon><ChatDotRound /></el-icon>
         <span>对话</span>
       </el-menu-item>
       <el-menu-item index="/providers">
+        <el-icon><Cpu /></el-icon>
         <span>模型管理</span>
       </el-menu-item>
       <el-menu-item index="/agents">
+        <el-icon><UserFilled /></el-icon>
         <span>Agent 管理</span>
       </el-menu-item>
     </el-menu>
@@ -28,6 +31,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import { ChatDotRound, Cpu, UserFilled } from '@element-plus/icons-vue'
 
 const route = useRoute()
 const currentRoute = computed(() => route.path)
@@ -83,6 +87,11 @@ body {
   line-height: 40px;
   font-size: var(--font-size-base);
   transition: background-color var(--transition-fast);
+}
+
+.app-sidebar .el-menu-item .el-icon {
+  margin-right: 8px;
+  font-size: 18px;
 }
 
 .app-sidebar .el-menu-item:hover {
