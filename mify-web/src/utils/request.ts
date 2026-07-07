@@ -1,7 +1,8 @@
 import axios from 'axios'
+import { ElMessage } from 'element-plus'
 
-const request = axios.create({
-  baseURL: '/api/v1',
+const instance = axios.create({
+  baseURL: '/api',
   timeout: 30000,
   headers: {
     'Content-Type': 'application/json',
@@ -9,18 +10,35 @@ const request = axios.create({
 })
 
 // 响应拦截器
-request.interceptors.response.use(
+instance.interceptors.response.use(
   (response) => {
     const { data } = response
-    if (data.code !== 200) {
-      console.error(`[${data.code}] ${data.message}`)
+    if (data.code === 200) {
+      return data.data
     }
-    return data
+    ElMessage.error(data.message || '请求失败')
+    return Promise.reject(data)
   },
   (error) => {
-    console.error('Request error:', error.message)
+    ElMessage.error(error.message || '网络错误')
     return Promise.reject(error)
   },
 )
 
-export default request
+export function get<T = any>(url: string, params?: Record<string, any>): Promise<T> {
+  return instance.get(url, { params })
+}
+
+export function post<T = any>(url: string, data?: any): Promise<T> {
+  return instance.post(url, data)
+}
+
+export function put<T = any>(url: string, data?: any): Promise<T> {
+  return instance.put(url, data)
+}
+
+export function del<T = any>(url: string): Promise<T> {
+  return instance.delete(url)
+}
+
+export default instance
