@@ -39,7 +39,8 @@
       ref="dialogRef"
       :fields="formFields"
       :title="editingId ? '编辑提供商' : '新增提供商'"
-      width="480px"
+      width="520px"
+      label-width="80px"
       @submit="handleSubmit"
     />
   </div>

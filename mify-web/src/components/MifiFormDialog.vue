@@ -9,7 +9,7 @@
     <el-form
       ref="formRef"
       :model="formData"
-      label-width="100px"
+      :label-width="labelWidth"
       @submit.prevent="handleSubmit"
     >
       <el-form-item
@@ -83,11 +83,13 @@ interface Props {
   fields: FormField[]
   title?: string
   width?: string
+  labelWidth?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
   title: '表单',
   width: '560px',
+  labelWidth: '100px',
 })
 
 const emit = defineEmits<{
