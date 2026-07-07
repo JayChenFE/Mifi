@@ -1,0 +1,140 @@
+/* ====== Mify Design System ====== */
+/* 主色：蓝紫系 / 辅色：青系 / 参考：Linear + Supabase */
+
+:root {
+  /* ====== 主色 — 蓝紫 (Indigo-Violet) ====== */
+  --color-primary-50: #f0f1ff;
+  --color-primary-100: #dde0ff;
+  --color-primary-200: #c2c5ff;
+  --color-primary-300: #9ea0ff;
+  --color-primary-400: #7c76ff;
+  --color-primary-500: #6358ff;
+  --color-primary-600: #4f3df5;
+  --color-primary-700: #3f2ed6;
+  --color-primary-800: #3225ad;
+  --color-primary-900: #2a1f8a;
+  --color-primary-950: #1a125e;
+
+  /* ====== 辅色 — 青 (Cyan) ====== */
+  --color-accent-50: #ecfeff;
+  --color-accent-100: #cffafe;
+  --color-accent-200: #a5f3fc;
+  --color-accent-300: #67e8f9;
+  --color-accent-400: #22d3ee;
+  --color-accent-500: #06b6d4;
+  --color-accent-600: #0891b2;
+  --color-accent-700: #0e7490;
+  --color-accent-800: #155e75;
+  --color-accent-900: #164e63;
+  --color-accent-950: #083344;
+
+  /* ====== 中性灰 — 冷调 Slate ====== */
+  --color-gray-50: #f8fafc;
+  --color-gray-100: #f1f5f9;
+  --color-gray-200: #e2e8f0;
+  --color-gray-300: #cbd5e1;
+  --color-gray-400: #94a3b8;
+  --color-gray-500: #64748b;
+  --color-gray-600: #475569;
+  --color-gray-700: #334155;
+  --color-gray-800: #1e293b;
+  --color-gray-900: #0f172a;
+  --color-gray-950: #020617;
+
+  /* ====== 功能色 ====== */
+  --color-success: #10b981;
+  --color-success-light: #d1fae5;
+  --color-warning: #f59e0b;
+  --color-warning-light: #fef3c7;
+  --color-error: #ef4444;
+  --color-error-light: #fee2e2;
+  --color-info: #3b82f6;
+  --color-info-light: #dbeafe;
+
+  /* ====== 语义变量（引用上述色阶） ====== */
+  --color-brand: var(--color-primary-500);
+  --color-brand-hover: var(--color-primary-600);
+  --color-brand-active: var(--color-primary-700);
+
+  /* ====== 背景色阶 ====== */
+  --bg-page: var(--color-gray-50);
+  --bg-container: #ffffff;
+  --bg-container-hover: var(--color-gray-50);
+  --bg-sidebar: var(--color-gray-900);
+  --bg-sidebar-hover: rgba(255, 255, 255, 0.06);
+  --bg-sidebar-active: rgba(99, 88, 255, 0.15);
+  --bg-overlay: rgba(0, 0, 0, 0.5);
+
+  /* ====== 文字色阶 ====== */
+  --text-primary: var(--color-gray-900);
+  --text-secondary: var(--color-gray-600);
+  --text-tertiary: var(--color-gray-400);
+  --text-placeholder: var(--color-gray-300);
+  --text-inverse: #ffffff;
+  --text-sidebar: var(--color-gray-300);
+  --text-sidebar-active: #ffffff;
+  --text-brand: var(--color-primary-600);
+
+  /* ====== 边框 ====== */
+  --border-color: var(--color-gray-200);
+  --border-color-light: var(--color-gray-100);
+  --border-color-focus: var(--color-primary-400);
+
+  /* ====== 圆角 ====== */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* ====== 阴影 ====== */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.06), 0 4px 6px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.08), 0 8px 10px rgba(0, 0, 0, 0.04);
+  --shadow-focus: 0 0 0 3px rgba(99, 88, 255, 0.15);
+
+  /* ====== 过渡动效 ====== */
+  --transition-fast: 120ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 350ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ====== 间距 ====== */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ====== 字体 ====== */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans SC', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas,
+    'Courier New', monospace;
+
+  --font-size-xs: 11px;
+  --font-size-sm: 12px;
+  --font-size-base: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 30px;
+
+  --line-height-tight: 1.25;
+  --line-height-base: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* ====== 布局 ====== */
+  --sidebar-width: 220px;
+  --header-height: 0px;
+  --page-padding: var(--space-6);
+  --container-max: 1280px;
+}

@@ -4,9 +4,9 @@
       :default-active="currentRoute"
       router
       class="app-sidebar"
-      background-color="#304156"
-      text-color="#bfcbd9"
-      active-text-color="#409eff"
+      background-color="transparent"
+      text-color="var(--text-sidebar)"
+      active-text-color="var(--text-sidebar-active)"
     >
       <div class="sidebar-title">Mify</div>
       <el-menu-item index="/chat">
@@ -40,29 +40,65 @@ const currentRoute = computed(() => route.path)
   box-sizing: border-box;
 }
 
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--text-primary);
+  background-color: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ====== Layout ====== */
 .app-layout {
   display: flex;
   height: 100vh;
 }
 
+/* ====== Sidebar ====== */
 .app-sidebar {
-  width: 220px;
+  width: var(--sidebar-width);
   flex-shrink: 0;
+  background-color: var(--bg-sidebar) !important;
+  border-right: none !important;
 }
 
 .sidebar-title {
   height: 56px;
   line-height: 56px;
   text-align: center;
-  color: #fff;
-  font-size: 20px;
-  font-weight: bold;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-inverse);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+/* Sidebar menu items */
+.app-sidebar .el-menu-item {
+  margin: 2px 8px;
+  border-radius: var(--radius-md);
+  height: 40px;
+  line-height: 40px;
+  font-size: var(--font-size-base);
+  transition: background-color var(--transition-fast);
+}
+
+.app-sidebar .el-menu-item:hover {
+  background-color: var(--bg-sidebar-hover) !important;
+}
+
+.app-sidebar .el-menu-item.is-active {
+  background-color: var(--bg-sidebar-active) !important;
+  color: var(--text-sidebar-active) !important;
+}
+
+/* ====== Main Content ====== */
 .app-main {
   flex: 1;
-  padding: 24px;
+  padding: var(--page-padding);
   overflow-y: auto;
+  background-color: var(--bg-page);
 }
 </style>
