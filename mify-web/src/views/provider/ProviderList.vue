@@ -172,7 +172,7 @@ function handleDelete(row: Provider) {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-4);
 }
 
 .page-title {
@@ -186,5 +186,21 @@ function handleDelete(row: Provider) {
   margin-top: var(--space-1);
   font-size: var(--font-size-base);
   color: var(--text-secondary);
+}
+
+/* 表格行高 */
+.provider-page :deep(.el-table__body .el-table__row td) {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.provider-page :deep(.el-table__header th) {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* 操作列按钮间距 */
+.provider-page :deep(.el-button + .el-button) {
+  margin-left: 8px;
 }
 </style>
