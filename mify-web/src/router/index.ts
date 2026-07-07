@@ -8,7 +8,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/providers',
     name: 'Provider',
-    component: () => import('@/views/provider/index.vue'),
+    component: () => import('@/views/provider/ProviderList.vue'),
   },
   {
     path: '/agents',
