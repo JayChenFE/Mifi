@@ -1,6 +1,6 @@
 <template>
   <div class="page-container">
-    <h1>Provider</h1>
+    <h2>模型管理</h2>
   </div>
 </template>
 
