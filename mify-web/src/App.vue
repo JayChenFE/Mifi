@@ -109,7 +109,7 @@ body {
 .app-sidebar .el-menu-item.is-active::before {
   content: '';
   position: absolute;
-  left: -8px;
+  left: 0;
   top: 50%;
   transform: translateY(-50%);
   width: 3px;
